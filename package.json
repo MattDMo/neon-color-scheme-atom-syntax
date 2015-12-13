@@ -1,0 +1,15 @@
+{
+  "name": "neon-color-scheme-atom-syntax",
+  "theme": "syntax",
+  "version": "1.0.0",
+  "description": "A colorful bright-on-black syntax color theme for Atom. Its aim is to make as many languages as possible look as good as possible.",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/MattDMo/neon-color-scheme-atom-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
