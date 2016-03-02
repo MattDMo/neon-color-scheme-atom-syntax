@@ -50,8 +50,13 @@ atom-text-editor.is-focused .cursor, :host(.is-focused) .cursor {
   border-color: @syntax-cursor-color;
 }
 
+// make the selection region (mostly) look like Sublime
 atom-text-editor.is-focused .selection .region, :host(.is-focused) .selection .region {
-  background-color: @syntax-selection-color;
+  background-color: @syntax-selection-color !important;
+  border-radius: 3px;
+  border-color: #00FF00;
+  border-style: solid;
+  border-width: thin;
 }
 
 atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line, :host(.is-focused) .line-number.cursor-line-no-selection, :host(.is-focused) .line.cursor-line {
