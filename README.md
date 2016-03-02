@@ -15,10 +15,10 @@ If you haven't figured out so far, I'm learning as I go here, as Sublime is (and
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=R97MGGYES6GAJ&lc=US&item_name=Matthew%20D%2e%20Morrison&item_number=neon%2datom%2dtheme&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
     <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="Donate" alt="PayPal - The safer, easier way to pay online!">
-</a>_
+</a>
 
 ## License
 
-&copy; 2015 Matt Morrison <mattdmo@pigimal.com>.
+&copy; 2015-2016 Matt Morrison <mattdmo@pigimal.com>.
 
 This is free software. It is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to use this in your own work. However, if you modify and/or redistribute it, please attribute me in some way, and it would be great if you distribute your work under this or a similar license, but it's not required. A shout-out or a beer would be appreciated.
