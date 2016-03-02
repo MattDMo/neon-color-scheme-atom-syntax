@@ -6,3 +6,6 @@
 * Updated with latest changes from ubuntu16:Packages version.
 * Removed a lot of unnecessary cruft - SublimeLinter, Bracket Highlighter, PackageDev, etc.
 * Separated sections by comments so it's a little easier to navigate.
+
+## 1.1.1 Oops
+* Forgot to keep the selection region optimization I developed the first time around.
