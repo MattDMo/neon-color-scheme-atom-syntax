@@ -1,5 +1,10 @@
+/*
+  Version 1.1.0 is based on ubuntu16:Packages/Neon Color Scheme/Neon.tmTheme
+  2016-02-29 15:22
+  Any changes since that date should be rolled into a later release if appropriate
+*/
+
 @import "syntax-variables";
-// @import "colors";
 
 atom-text-editor, :host {
   background-color: @syntax-background-color;
@@ -46,16 +51,15 @@ atom-text-editor.is-focused .cursor, :host(.is-focused) .cursor {
 }
 
 atom-text-editor.is-focused .selection .region, :host(.is-focused) .selection .region {
-  background-color: @syntax-selection-color !important;
-  border-radius: 3px;
-  border-color: #00FF00;
-  border-style: solid;
-  border-width: thin;
-  // border-color: #FFFF00;
+  background-color: @syntax-selection-color;
 }
 
 atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line, :host(.is-focused) .line-number.cursor-line-no-selection, :host(.is-focused) .line.cursor-line {
   background-color: #2D2D2D;
+}
+
+.meta.function-call .meta.group.braces.round.function.arguments.js, .meta.function-call.r .punctuation.definition.parameters.r {
+  color: #FFFFFF;
 }
 
 .invalid {
@@ -157,7 +161,7 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #04FFD7;
 }
 
-.meta.structure.dictionary .meta.structure.dictionary.key, .constant.other.object.key .string {
+.meta.structure.dictionary .meta.structure.dictionary.key, .constant.other.object.key .string, .meta.object-literal.key {
   font-weight: bold;
   color: #A9FF98;
 }
@@ -182,27 +186,27 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #13FFA3;
 }
 
-.meta.function .entity.name.function, .entity.name.function.abp, .meta.prototype.function.js, .entity.name.function.js, .entity.name.function.makefile {
+.meta.function .entity.name.function, .entity.name.function.abp, .meta.prototype.function.js, .entity.name.function.makefile {
   color: #0AFF04;
   background-color: #07019A;
 }
 
-.meta.function-call, .support.function.name, .meta.function-call .punctuation.definition.parameters, .meta.function-call.method.without-arguments.js:not(.meta.group.braces.round.function.arguments.js) {
+.meta.function-call, .support.function.name, .meta.function-call .punctuation.definition.parameters, .meta.function-call .variable.function.js, .meta.function-call .entity.name.function.js, .support.function.source.rust {
   color: #10FF02;
 }
 
-.meta.function-call.arguments {
+.meta.function-call.arguments, .meta.function-call.parameters .variable.parameter {
   font-style: italic;
   color: #2BB71D;
 }
 
-.variable.parameter.function {
+.variable.parameter.function, .meta.function.parameters .variable.parameter {
   font-style: italic;
   color: #FFF57F;
 }
 
 .support.function {
-  color: #E5A5FF;
+  color: #C809FF;
 }
 
 .support.function.builtin {
@@ -245,6 +249,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #0A4AFF;
 }
 
+// =========== JavaScript ==========
+
 .entity.name.type.new {
   font-weight: bold;
   font-style: italic;
@@ -280,6 +286,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 .support.class.js.jquery {
   color: #08D879;
 }
+
+// =========== Clojure ==========
 
 .source.clojure .constant.other {
   font-weight: bold;
@@ -337,6 +345,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #A7A3FF;
 }
 
+// =========== Ruby ==========
+
 .constant.other.symbol, .constant.other.symbol .punctuation.definition.constant {
   color: #FF9705;
 }
@@ -363,13 +373,11 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #276AFF;
 }
 
-.string.regexp.character-class, .punctuation.definition.character-class {
-  color: #22FFC9;
-}
-
 .variable.other.block, .punctuation.separator.variable {
   color: #14FF01;
 }
+
+// =========== Python ==========
 
 .punctuation.separator.annotation.python {
   font-weight: bold;
@@ -397,17 +405,17 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #FF06A5;
 }
 
-.comment.line.note.python {
+.comment.line.note {
   color: #E2FF09;
   background-color: #000B76;
 }
 
-.comment.line.note.notation.python {
+.comment.line.note.notation {
   font-weight: bold;
   color: #FF112C;
 }
 
-.constant.other.allcaps {
+.constant.other.allcaps, .constant.other.source.rust {
   font-weight: bold;
   color: #FFA325;
 }
@@ -482,6 +490,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #E3A0FF;
 }
 
+// =========== JSON ==========
+
 .source.json .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta .meta.structure.dictionary .string {
   color: #F50AFF;
 }
@@ -554,6 +564,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #FF82EC;
 }
 
+// =========== C/C++ ==========
+
 .meta.preprocessor {
   color: #A85E3D;
 }
@@ -570,9 +582,38 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #FF65BE;
 }
 
-.meta.diff, .meta.diff.header {
-  color: #FFFFFF;
-  background-color: #008BFE;
+// =========== diff ==========
+
+.meta.diff.range .punctuation.definition.range {
+  font-weight: bold;
+  color: #1AEFFF;
+}
+
+.meta.diff.range .meta.toc-list.line-number {
+  font-weight: bold;
+  color: #FF07C5;
+}
+
+.source.diff .punctuation.definition.from-file {
+  font-weight: bold;
+  color: #6CFE11;
+  background-color: #1911FF;
+}
+
+.source.diff .punctuation.definition.to-file {
+  font-weight: bold;
+  color: #1911FF;
+  background-color: #6CFE11;
+}
+
+.meta.diff.header.from-file {
+  color: #6CFE11;
+  background-color: #1911FF;
+}
+
+.meta.diff.header.to-file {
+  color: #1911FF;
+  background-color: #6CFE11;
 }
 
 .markup.deleted {
@@ -590,7 +631,10 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   background-color: #277D08;
 }
 
+// =========== HTML/XML ==========
+
 .entity.other.attribute-name, .storage.type.attr {
+  font-style: italic;
   color: #FF88F9;
 }
 
@@ -612,13 +656,16 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #1AEFFF;
 }
 
-.meta.tag, .meta.tag .entity {
+.meta.tag .entity.name, .entity.name.tag {
+  font-weight: bold;
   color: #FF6803;
 }
 
 .punctuation.definition.tag {
   color: #02AEFF;
 }
+
+// =========== Android Debug Bridge ==========
 
 .constant.other.adb.timestamp {
   color: #FE7DF5;
@@ -640,6 +687,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #FFFF00;
 }
 
+// =========== logcat ==========
+
 .string.logcat.timestamp {
   color: #FE7DF5;
 }
@@ -657,11 +706,6 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #777777;
 }
 
-.entity.name.function.logcat {
-  font-style: italic;
-  color: #CCCCCC;
-}
-
 .entity.name.class.logcat {
   color: #08F2FF;
 }
@@ -671,6 +715,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   background-color: #DBBE07;
 }
 
+// =========== Markup/Markdown ==========
+
 .markup.raw, .markup.raw .punctuation {
   color: #FFFFFF;
   background-color: #3F403F;
@@ -679,6 +725,7 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 .meta.link.inline .markup.underline, .meta.image.inline .markup.underline, .markup.underline.link {
   color: #8080FF;
   background-color: #212121;
+  text-decoration: underline;
 }
 
 .punctuation.definition.metadata, .punctuation.definition.string.begin.markdown, .punctuation.definition.string.end.markdown {
@@ -721,6 +768,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #E421FD;
 }
 
+// =========== PHP ==========
+
 .keyword.other.phpdoc.php {
   font-style: italic;
   color: #3A771F;
@@ -762,6 +811,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 .variable.other.global.safer.php {
   color: #00FF00;
 }
+
+// =========== Stylesheets ==========
 
 .meta.property-value .support.constant.named-color.css, .meta.property-value .constant {
   font-style: italic;
@@ -858,6 +909,8 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #6969FA;
 }
 
+// =========== GitGutter ==========
+
 .markup.deleted.git_gutter {
   color: #FF0000;
 }
@@ -870,19 +923,102 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
   color: #FFFF00;
 }
 
-.entity.name.filename.find-in-files {
-  color: #06FF05;
+// =========== YAML ==========
+
+.constant.numeric.key {
+  font-weight: bold;
+  color: #00B000;
 }
 
-.constant.numeric.line-number.match.find-in-files {
-  color: #FFFF00;
+.constant.other.timestamp {
+  color: #A2FF4A;
 }
 
-.keyword.other.name.sublime-settings {
-  color: #05B4FF;
+.support.other.directive {
+  color: #F14FFF;
 }
 
-.entity.other.control {
+.meta.directive.yaml .punctuation {
+  font-weight: bold;
+  font-style: italic;
+  color: #0777FF;
+}
+
+.punctuation.definition.block.scalar.literal, .support.other.chomping-indicator {
+  font-style: italic;
+  color: #00FF00;
+}
+
+.punctuation.definition.block.sequence.item {
+  font-style: italic;
+  color: #0FD7FF;
+}
+
+// =========== RAML ==========
+
+.source.raml .constant.language.document.yaml {
+  color: #C2E978;
+}
+
+.source.raml .constant.other.directive.yaml .constant.language.directive.yaml {
+  color: #C2E978;
+}
+
+.source.raml .meta.key-value .entity.name.function.yaml {
+  color: #DF31FC;
+}
+
+.source.raml .meta.resource .entity.name.tag.yaml {
+  color: #FCA628;
+}
+
+.source.raml .meta.key-value {
+  color: #FFFFFF;
+}
+
+.source.raml .meta.key-value.include {
+  color: #8080FF;
+  background-color: #212121;
+}
+
+.source.raml .meta.key-value.include.path {
+  color: #A080FF;
+}
+
+.source.raml .markup.raw.description.raml {
+  color: #C2E978;
+  background-color: #1C1C1C;
+}
+
+.source.raml .string.quoted.single.yaml {
+  color: #90F060;
+  background-color: #1C1C1C;
+}
+
+.source.raml .meta.method .constant.character.method.yaml {
+  color: #4281FB;
+}
+
+// =========== Matlab ==========
+
+.keyword.mathematics.matlab {
+  color: #D6FF1E;
+}
+
+// =========== Regex ==========
+
+.constant.other.assertion {
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.string.regexp.character-class, .punctuation.definition.character-class, .keyword.control.character-class {
+  font-weight: bold;
+  font-style: italic;
+  color: #66CCFF;
+}
+
+.entity.other.control, .keyword.control.anchors {
   color: #A4FF5A;
   background-color: #07019A;
 }
@@ -893,104 +1029,29 @@ atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-edi
 
 .storage.type.regexp.group, .string .meta.group.regexp .punctuation.definition.group, .punctuation.definition.group.regexp {
   font-weight: bold;
+  color: #00B471;
+}
+
+.constant.other.posix-bracket {
+  font-weight: bold;
   font-style: italic;
-  color: #05B4FF;
+  color: #464FFF;
 }
 
 .support.operator.quantifier {
   color: #0DFF03;
 }
 
-.constant.numeric.key {
+.constant.other.range {
+  font-style: italic;
+  color: #FF009A;
+}
+
+.keyword.control.set {
   font-weight: bold;
-  color: #00B000;
+  color: #00B471;
 }
 
-.source.raml {
-}
-
-.source.raml .constant.language.document.yaml {
-}
-
-.source.raml .constant.other.directive.yaml .constant.language.directive.yaml {
-  color: #c2e978;
-}
-
-.source.raml .meta.key-value .entity.name.function.yaml {
-  color: #df31fc;
-}
-
-.source.raml .meta.resource .entity.name.tag.yaml {
-  color: #fca628;
-}
-
-.source.raml .meta.key-value {
-  color: #ffffff;
-}
-
-.source.raml .meta.key-value.include {
-  color: #8080FF;
-  background-color: #212121;
-}
-
-.source.raml .meta.key-value.include.path {
-  color: #a080FF;
-}
-
-.source.raml .markup.raw.description.raml {
-  color: #c2e978;
-  background-color: #1c1c1c;
-}
-
-.source.raml .string.quoted.single.yaml {
-  color: #90f060;
-  background-color: #1c1c1c;
-}
-
-.source.raml .meta.method .constant.character.method.yaml {
-  color: #4281fb;
-}
-
-.brackethighlighter.default {
-  color: #FFFFFF;
-}
-
-.brackethighlighter.unmatched {
-  color: #FF1E00;
-}
-
-.brackethighlighter.curly {
-  color: #00FF40;
-}
-
-.brackethighlighter.round {
-  color: #1AB5FF;
-}
-
-.brackethighlighter.square {
-  color: #FF8000;
-}
-
-.brackethighlighter.angle {
-  color: #9A35FF;
-}
-
-.brackethighlighter.tag {
-  color: #FFFF00;
-}
-
-.brackethighlighter.quote {
-  color: #FF07A2;
-}
-
-.brackethighlighter.c_define {
-  color: #8189FF;
-}
-
-.brackethighlighter.bash {
-  color: #0B93FF;
-}
-
-.keyword.mathematics.matlab {
-  color: #D6FF1E;
+.string.regexp.group {
+  color: #DFBA00;
 }
