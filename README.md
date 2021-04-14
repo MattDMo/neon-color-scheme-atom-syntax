@@ -19,6 +19,6 @@ If you haven't figured out so far, I'm learning as I go here, as Sublime is (and
 
 ## License
 
-&copy; 2015-2016 Matt Morrison <mattdmo@pigimal.com>.
+&copy; 2015-2021 Matt Morrison @MattDMo.
 
 This is free software. It is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to use this in your own work. However, if you modify and/or redistribute it, please attribute me in some way, and it would be great if you distribute your work under this or a similar license, but it's not required. A shout-out or a beer would be appreciated.
